@@ -1,25 +1,34 @@
 package GradedLab2;
 
 public class Order {
-    Trader User; // trader name who initialised the order
+    String trader; // trader name who initialised the order
     String orderType; // orderType as in buy-order or sell-order
-    Company scrip; // company name
+    Scrip scrip; // company name
     int quantity; // quantity of shares in the order
-    int rate; // rate at which the transaction is taking place
+    double rate; // rate at which the transaction is taking place
     int askPrice=0;
     int bidPrice=0;
 
+    public Order(String trader, String orderType, Scrip scrip, int quantity, double rate, int askPrice, int bidPrice) {
+        this.trader = trader;
+        this.orderType = orderType;
+        this.scrip = scrip;
+        this.quantity = quantity;
+        this.rate = rate;
+        this.askPrice = askPrice;
+        this.bidPrice = bidPrice;
 
+    }
 
-    public Trader getUser() {
-        return User;
+    public String getTrader() {
+        return trader;
     }
 
     public String getOrderType() {
         return orderType;
     }
 
-    public Company getScrip() {
+    public Scrip getScrip() {
         return scrip;
     }
 
@@ -27,7 +36,7 @@ public class Order {
         return  quantity;
     }
 
-    public int getRate() {
+    public double getRate() {
         return rate;
     }
 }

@@ -1,14 +1,20 @@
 package GradedLab2;
 
-import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class Trader {
     String name; //name of the trader
     UUID traderId; // unique trader id
     int funds; // funds in the account
-    HashMap<Company, Double> sharesOwned;  // hashmap of all the shares owned by the trader
+    Map<String, Integer> sharesOwned;  // hashmap of all the shares owned by the trader
     Orderbook personalOrderBook;  // contains all the orders done by the trader
+
+    public Trader(String name, int funds, Map<String, Integer> sharesOwned) {
+        this.name = name;
+        this.funds = funds;
+        this.sharesOwned = sharesOwned;
+    }
 
     public String getName() {
         return name;
@@ -30,11 +36,11 @@ public class Trader {
         this.funds = funds;
     }
 
-    public HashMap<Company, Double> getSharesOwned() {
+    public Map<String, Integer> getSharesOwned() {
         return sharesOwned;
     }
 
-    public void setSharesOwned(HashMap<Company, Double> sharesOwned) {
+    public void setSharesOwned(Map<String, Integer> sharesOwned) {
         this.sharesOwned = sharesOwned;
     }
 
