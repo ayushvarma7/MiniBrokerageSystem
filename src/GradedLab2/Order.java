@@ -32,12 +32,19 @@ public class Order {
         return scrip;
     }
 
+
+
     public int getQuantity(){
         return  quantity;
     }
 
     public double getRate() {
         return rate;
+    }
+
+    @Override
+    public String toString() {
+        return orderType+ " order "+ scrip.getTicker()+ ":"+ quantity + " at " + rate;
     }
 }
 

@@ -7,15 +7,17 @@ public class Trader {
     String name; //name of the trader
     UUID traderId; // unique trader id
     int funds; // funds in the account
-    Map<String, Integer> sharesOwned;  // hashmap of all the shares owned by the trader
+    Map<String, Integer> sharesOwned;  // Map of all the name of shares and amount owned by the trader
     Orderbook personalOrderBook;  // contains all the orders done by the trader
 
+//    Constructors
     public Trader(String name, int funds, Map<String, Integer> sharesOwned) {
         this.name = name;
         this.funds = funds;
         this.sharesOwned = sharesOwned;
     }
 
+//    Methods
     public String getName() {
         return name;
     }
@@ -36,7 +38,7 @@ public class Trader {
         this.funds = funds;
     }
 
-    public Map<String, Integer> getSharesOwned() {
+    public Map<String, Integer> getSharesOwned() {//returns the map of shares owned by the trader
         return sharesOwned;
     }
 
@@ -44,11 +46,17 @@ public class Trader {
         this.sharesOwned = sharesOwned;
     }
 
-    public Orderbook getPersonalOrderBook() {
+    public Orderbook getPersonalOrderBook() {//returns the orderbook for the trader
         return personalOrderBook;
     }
 
     public void setPersonalOrderBook(Orderbook personalOrderBook) {
         this.personalOrderBook = personalOrderBook;
+    }
+
+    @Override
+    public String toString() {
+        return "user:" +
+                name + ", funds:" + funds + ", holdings:" + sharesOwned;
     }
 }

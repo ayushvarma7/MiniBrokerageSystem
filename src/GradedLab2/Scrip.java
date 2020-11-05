@@ -19,7 +19,8 @@ public class Scrip { //Company is abbreviated as Scrip
     double closePrice=0; // price of the last transaction of the day
     StockExchange stockExchange; // listed in which stock exchange
 
-    Map<Trader, Integer> shares= new HashMap<>();
+    Map<Trader, Integer> shares= new HashMap<>(); // Map of {Trader and Integer} pair consisting of
+//    all the shares owned/acquired by different traders
 
 //Constructors
 
@@ -36,17 +37,18 @@ public class Scrip { //Company is abbreviated as Scrip
         this.stockExchange = stockExchange;
     }
 
-    public Scrip(){
+    public Scrip(){//if a Scrip is just initialised then we set its attributes as the following
         this.Scrip("unknown","UNK","unknown", 0,0,0,0);
     }
 
 
 
     public Scrip(StockExchange exchange, String ticker, String sector) {
+        //initialising with the ticker, sector and the stock exchange it is present in
         this( ticker, sector,0,0,0,0,0,0,0, exchange);
     }
 
-
+//Methods
     public String getName() {
         return name;
     }
@@ -113,22 +115,16 @@ public class Scrip { //Company is abbreviated as Scrip
     }
 
 
+    public String printScrip() {
+        return "scrip:" +ticker +
+                ", sector:" + sector + ", lowPrice:" + lowPrice +
+                ", highPrice:" + highPrice +
+                ", openPrice:" + openPrice +
+                ", closePrice:" + closePrice ;
+    }
 
     @Override
     public String toString() {
-        return "Company{" +
-                "name='" + name + '\'' +
-                ", ticker='" + ticker + '\'' +
-                ", sector='" + sector + '\'' +
-                ", totalShares=" + totalShares +
-                ", upperCircuitRate=" + upperCircuitRate +
-                ", lowerCircuitRate=" + lowerCircuitRate +
-                ", LTP=" + LTP +
-                ", lowPrice=" + lowPrice +
-                ", highPrice=" + highPrice +
-                ", openPrice=" + openPrice +
-                ", closePrice=" + closePrice +
-                ", stockExchange=" + stockExchange +
-                '}';
+        return ticker+ ", OHLC = <"+ openPrice+", "+ highPrice+ ", "+ lowPrice+ ", "+ closePrice+ ">";
     }
 }
