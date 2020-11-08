@@ -6,7 +6,7 @@ import java.util.UUID;
 public class Trader {
     String name; //name of the trader
     UUID traderId; // unique trader id
-    int funds; // funds in the account
+    double funds=0; // funds in the account
     Map<String, Integer> sharesOwned;  // Map of all the name of shares and amount owned by the trader
     Orderbook personalOrderBook;  // contains all the orders done by the trader
 
@@ -30,7 +30,7 @@ public class Trader {
         return traderId;
     }
 
-    public int getFunds() {
+    public double getFunds() {
         return funds;
     }
 
@@ -57,6 +57,6 @@ public class Trader {
     @Override
     public String toString() {
         return "user:" +
-                name + ", funds:" + funds + ", holdings:" + sharesOwned;
+                name + ", funds:" + funds + ", holding:" + sharesOwned;
     }
 }

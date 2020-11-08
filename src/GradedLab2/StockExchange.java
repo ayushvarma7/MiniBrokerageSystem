@@ -7,7 +7,6 @@ import java.util.Map;
 
 public class StockExchange{
     String Name; //name of the stock exchange
-//    ArrayList<Scrip> Companies= new ArrayList<Scrip>(); //contains all the companies present in the stock exchange
     Map<String, List<Scrip>> Companies= new HashMap<>();//Map of 'Sector' String and list of Companies in it
    Orderbook orderbook; // all the orders completed in this stock exchange
 
@@ -30,6 +29,8 @@ public class StockExchange{
          list.add(company);//adding the company into the list
          Companies.put(sector,list);//adding the new list into the map
       }
+      System.out.println("Added scrip:"+ company.getTicker()+ " with a new instantiation of "+ company.stockExchange.Name);
+
    }
 
    public Map<String, List<Scrip>> getCompanies() {

@@ -12,7 +12,7 @@ public class Scrip { //Company is abbreviated as Scrip
     int totalShares; // total no. of shares of the company
     double upperCircuitRate; //maximum allowed price of the share
     double lowerCircuitRate; //minimum allowed price of the share
-    double LTP; // means the latest trading price
+    double LTP=0; // means the latest trading price
     double lowPrice=0; // lowest price per share of the transaction in the whole day
     double highPrice=0; // highest price per share of the transaction in the whole day
     double openPrice=0; // price of the first transaction of the day
@@ -28,8 +28,8 @@ public class Scrip { //Company is abbreviated as Scrip
     public Scrip( String ticker, String sector, double upperCircuitRate, double lowerCircuitRate, double LTP, double lowPrice, double highPrice, double openPrice, double closePrice, StockExchange stockExchange) {
         this.ticker = ticker;
         this.sector = sector;
-        this.upperCircuitRate = upperCircuitRate;
-        this.lowerCircuitRate = lowerCircuitRate;
+        this.upperCircuitRate = highPrice+(0.1*highPrice);
+        this.lowerCircuitRate = lowPrice-(0.1*lowPrice);
         this.lowPrice = lowPrice;
         this.highPrice = highPrice;
         this.openPrice = openPrice;

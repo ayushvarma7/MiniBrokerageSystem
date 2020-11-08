@@ -38,13 +38,26 @@ public class Order {
         return  quantity;
     }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public double getRate() {
         return rate;
+    }
+
+    public String printOrder() {
+        return  trader +
+                ", type:" + orderType +
+                ", scrip:" + scrip.getTicker() +
+                ", qty:" + quantity +
+                ", rate: " + rate ;
     }
 
     @Override
     public String toString() {
         return orderType+ " order "+ scrip.getTicker()+ ":"+ quantity + " at " + rate;
     }
+
 }
 
